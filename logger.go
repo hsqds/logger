@@ -14,9 +14,14 @@ const (
 type Logger interface {
 	SetLevel(lvl Level)
 
-	Fatal(msg string, args ...interface{})
-	Error(msg string, args ...interface{})
-	Warn(msg string, args ...interface{})
-	Info(msg string, args ...interface{})
-	Debug(msg string, args ...interface{})
+	// Fatal
+	F(msg string, args ...interface{})
+	// Error
+	E(msg string, args ...interface{})
+	// Warning
+	W(msg string, args ...interface{})
+	// Info
+	I(msg string, args ...interface{})
+	// Debug
+	D(msg string, args ...interface{})
 }

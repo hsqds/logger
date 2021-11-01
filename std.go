@@ -5,9 +5,7 @@ import (
 	"os"
 )
 
-var (
-	_ Logger = &StdLogger{}
-)
+var _ Logger = &StdLogger{}
 
 // StdLogger represents
 type StdLogger struct {
@@ -35,27 +33,27 @@ func (l *StdLogger) log(lvl Level, msg string, args ...interface{}) {
 }
 
 // Debug
-func (l *StdLogger) Debug(msg string, args ...interface{}) {
+func (l *StdLogger) D(msg string, args ...interface{}) {
 	l.log(LevelDebug, msg, args...)
 }
 
 // Info
-func (l *StdLogger) Info(msg string, args ...interface{}) {
+func (l *StdLogger) I(msg string, args ...interface{}) {
 	l.log(LevelInfo, msg, args...)
 }
 
 // Warn
-func (l *StdLogger) Warn(msg string, args ...interface{}) {
+func (l *StdLogger) W(msg string, args ...interface{}) {
 	l.log(LevelWarn, msg, args...)
 }
 
 // Error
-func (l *StdLogger) Error(msg string, args ...interface{}) {
+func (l *StdLogger) E(msg string, args ...interface{}) {
 	l.log(LevelError, msg, args...)
 }
 
 // Fatal
-func (l *StdLogger) Fatal(msg string, args ...interface{}) {
+func (l *StdLogger) F(msg string, args ...interface{}) {
 	l.log(LevelCritical, msg, args...)
 	os.Exit(1)
 }

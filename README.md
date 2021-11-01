@@ -2,7 +2,7 @@
 
 WIP
 
-Logger interface and it's primitive go standard library implementation.
+Logger interface
 
 ## Features
 
